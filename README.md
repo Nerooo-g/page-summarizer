@@ -1,4 +1,18 @@
-# Page Summarizer
+# Page Summarizer (Modified Version)
+
+## Notice
+
+This project is a modified version of [sysread/page-summarizer](https://github.com/sysread/page-summarizer) and continues to follow the original [MIT License](./LICENSE).
+
+### Key Modifications
+
+- Added [describe your changes here]
+- Improved [describe improvements]
+- Fixed [describe bug fixes]
+
+---
+
+## Original README
 
 Page Summarizer is a Chrome extension that utilizes OpenAI's chat completions
 API to summarize text from a web page. Just highlight the text you want to
@@ -14,7 +28,6 @@ summarize, click the extension icon, and get a concise summary.
 - Uses the OpenAI conversations API
 
 ![Summarize a web page](./docs/summarize-page.gif)
-
 ![Summarize selected text](./docs/summarize-selection.gif)
 
 ## Installation
@@ -49,41 +62,3 @@ Go [here](https://chromewebstore.google.com/detail/page-summarizer/mcebcgkikhcji
 
 ```bash
    git clone https://github.com/sysread/page-summarizer.git
-```
-2. Open Google Chrome and navigate to chrome://extensions/.
-3. Enable "Developer mode" in the top-right corner.
-4. Click "Load unpacked" and select the directory where you cloned the repository.
-5. The extension icon should now appear in your Chrome toolbar.
-6. Right-click the extension icon and choose "Options", then enter your OpenAI API key and preferred model.
-
-## Usage
-
-### Summarize the entire page
-
-- Click the Page Summarizer extension icon
-- Click "Summarize page"
-
-### Summarize selected text
-
-- Select the text you wish to summarize
-- Right click and choose "Summarize selection" in the context menu
-
-### Fill in text
-
-- Click on the text area you want to fill in
-- Right click and choose "Fill with text using GPT"
-- In the dialog box that appears, explain what you want GPT to say
-- Optionally check 'Include page contents?' if context may be needed
-- Click "Submit"
-
-## Troubleshooting
-
-- Make sure you've entered the correct OpenAI API key.
-- Make sure your OpenAI account has sufficient API quota.
-- Check the JavaScript console for any errors.
-- Find the bugs in my code and submit a PR
-
-## Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to
-discuss what you would like to change.
