@@ -1,0 +1,102 @@
+/* Import Noto Sans SC to prioritize Chinese font rendering */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+/* Custom styles to enhance UI with vibrant colors and modern aesthetics */
+:root {
+  /* Vibrant color palette */
+  --bs-primary: #ff6f61;
+  --bs-secondary: #6b5b95;
+  --bs-success: #88b04b;
+  --bs-info: #0096c7;
+  --bs-warning: #fcbf49;
+  --bs-danger: #e63946;
+
+  /* Background and text colors */
+  --bs-body-bg: #f4f4f9;
+  --bs-body-color: #333333;
+  /* Use Noto Sans SC for Chinese characters, with fallbacks */
+  --bs-font-sans-serif: 'Noto Sans SC', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif;
+
+  /* Borders and radii */
+  --bs-border-radius: 0.5rem;
+  --bs-border-radius-sm: 0.25rem;
+  --bs-border-radius-lg: 1rem;
+}
+
+/* Dark theme specific overrides */
+html[data-bs-theme="dark"] body {
+  background: linear-gradient(135deg, #1e1e29 0%, #1a1a2e 100%);
+  color: var(--bs-body-color);
+}
+html[data-bs-theme="dark"] .card,
+html[data-bs-theme="dark"] .text-bg-light {
+  background-color: var(--bs-body-bg) !important;
+  color: var(--bs-body-color) !important;
+}
+/* Override Bootstrap variables for dark mode */
+:root[data-bs-theme="dark"] {
+  --bs-body-bg: #1e1e29;
+  --bs-body-color: #e0e0e0;
+  --bs-light: #2a2a3f;
+  --bs-light-text-emphasis: #e0e0e0;
+  --bs-tertiary-bg: #2a2a3f;
+  --bs-secondary-bg: #343a40;
+  --bs-border-color: #3b3b4f;
+}
+
+/* Global body styles */
+body {
+  background: linear-gradient(135deg, #f4f4f9 0%, #e6e6e8 100%);
+  color: var(--bs-body-color);
+  font-family: var(--bs-font-sans-serif);
+}
+
+/* Link hover effect */
+a:hover {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+/* Card styling */
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: var(--bs-border-radius);
+}
+/* Ensure Chinese text uses Noto Sans SC if available */
+#summary, #summaryCard {
+  font-family: 'Noto Sans SC', var(--bs-font-sans-serif) !important;
+}
+
+/* Button hover and focus transitions */
+.btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: var(--bs-border-radius);
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Input and select rounded corners */
+.form-control,
+.form-select {
+  border-radius: var(--bs-border-radius);
+}
+
+/* Input group labels */
+.input-group-text {
+  background-color: var(--bs-secondary);
+  color: #ffffff;
+  border: none;
+}
+
+/* Headings enhancement */
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--bs-dark);
+}
+
+/* List item spacing */
+li {
+  margin-bottom: 0.5em;
+}

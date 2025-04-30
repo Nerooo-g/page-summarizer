@@ -5,14 +5,10 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <!-- Enable light/dark color-scheme support -->
+    <meta name="color-scheme" content="light dark" />
     <link rel="stylesheet" href="../../assets/bootstrap.min.css" />
-
-    <style>
-      li {
-        margin-bottom: 0.5em;
-      }
-    </style>
+    <link rel="stylesheet" href="../../assets/custom.css" />
   </head>
   <body class="p-2">
     <div id="header" class="mb-3 visually-hidden">
@@ -53,6 +49,14 @@
       <button id="summarize" class="btn btn-primary btn-sm" title="Summarize page">Summarize page</button>
       <button id="newWindow" class="btn btn-outline-primary btn-sm" title="Open in new window">&#x2197;</button>
       <button id="copySummary" class="btn btn-outline-primary btn-sm" disabled title="Copy summary">&#x1F4CB;</button>
+      <button id="translateZh" class="btn btn-outline-secondary btn-sm" disabled title="Translate to Chinese">
+        <img src="https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f1e8-1f1f3.svg"
+        alt="中国国旗" style="height:1em;vertical-align:middle;">
+      </button>
+      <button id="translateEn" class="btn btn-outline-secondary btn-sm" disabled title="Translate to English">
+        <img src="https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f1fa-1f1f8.svg"
+        alt="美国国旗" style="height:1em;vertical-align:middle;">
+      </button>
       <button id="options" class="btn btn-outline-primary btn-sm" title="Settings">&#x2699;</button>
     </div>
 

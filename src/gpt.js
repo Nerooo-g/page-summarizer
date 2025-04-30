@@ -220,14 +220,28 @@ export async function fetchAndStream(port, messages, options = {}) {
 // Filters the list of OpenAI models to only those that are useful for our
 // purposes.
 //------------------------------------------------------------------------------
+
+const reasoningModels = [
+  'o1', 'o1-preview', 'o3',
+  'o1-mini', 'o3-mini', 'o4-mini'
+];
+
 export function wantModel(model) {
-  return [/^o\d-mini$/, /^gpt-\d(\.\d)?o(-mini)?$/].some((re) => re.test(model));
+  return [
+    /^o1(-preview|-mini)?$/,
+    /^o3(-mini)?$/,
+    /^o4-mini$/,
+    /^gpt-4\.1(-nano|-mini)?$/,
+    /^gpt-4o(-mini)?$/,
+    /^gpt-4\.5-preview$/
+  ].some(re => re.test(model));
 }
+
 
 //------------------------------------------------------------------------------
 // Returns true if the model is a reasoning model. This is used to determine
 // if we need to send the reasoning effort parameter in the request.
 // ------------------------------------------------------------------------------
 export function isReasoningModel(model) {
-  return /o\d-mini/.test(model);
+  return reasoningModels.includes(model);
 }

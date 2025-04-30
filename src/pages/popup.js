@@ -1,4 +1,11 @@
 import { isReasoningModel } from '../gpt.js';
+// Auto-switch Bootstrap light/dark based on system setting
+(() => {
+  const mq = window.matchMedia('(prefers-color-scheme: dark)');
+  const applyTheme = () => document.documentElement.setAttribute('data-bs-theme', mq.matches ? 'dark' : 'light');
+  applyTheme();
+  mq.addEventListener('change', applyTheme);
+})();
 
 document.addEventListener('DOMContentLoaded', async function () {
   const defaultModel = 'gpt-4o-mini';
@@ -45,9 +52,11 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
 
   //----------------------------------------------------------------------------
-  // Copy summary to clipboard
+  // Copy summary to clipboard and translation buttons
   //----------------------------------------------------------------------------
   const copySummaryButton = document.getElementById('copySummary');
+  const translateZhButton = document.getElementById('translateZh');
+  const translateEnButton = document.getElementById('translateEn');
 
   function enableCopyButton() {
     copySummaryButton.classList.remove('btn-outline-secondary');
@@ -60,12 +69,30 @@ document.addEventListener('DOMContentLoaded', async function () {
     copySummaryButton.classList.add('btn-outline-secondary');
     copySummaryButton.disabled = true;
   }
+  
+  function enableTranslateButtons() {
+    [translateZhButton, translateEnButton].forEach(btn => {
+      btn.classList.remove('btn-outline-secondary');
+      btn.classList.add('btn-outline-info');
+      btn.disabled = false;
+    });
+  }
+
+  function disableTranslateButtons() {
+    [translateZhButton, translateEnButton].forEach(btn => {
+      btn.classList.remove('btn-outline-info');
+      btn.classList.add('btn-outline-secondary');
+      btn.disabled = true;
+    });
+  }
 
   window.setInterval(() => {
     if (lastMessage) {
       enableCopyButton();
+      enableTranslateButtons();
     } else {
       disableCopyButton();
+      disableTranslateButtons();
     }
   }, 500);
 
@@ -81,6 +108,35 @@ document.addEventListener('DOMContentLoaded', async function () {
         console.error('Failed to copy text: ', err);
       }
     }
+  });
+  
+  //----------------------------------------------------------------------------
+  // Translate summary
+  //----------------------------------------------------------------------------
+  translateZhButton.addEventListener('click', async () => {
+    if (working || !lastMessage) return;
+    working = true;
+    updateSummary('Translating summary to Chinese...');
+    postMessage({
+      action: 'TRANSLATE',
+      text: lastMessage,
+      targetLang: 'Chinese',
+      model: getModel(),
+      profile: currentProfile,
+    });
+  });
+
+  translateEnButton.addEventListener('click', async () => {
+    if (working || !lastMessage) return;
+    working = true;
+    updateSummary('Translating summary to English...');
+    postMessage({
+      action: 'TRANSLATE',
+      text: lastMessage,
+      targetLang: 'English',
+      model: getModel(),
+      profile: currentProfile,
+    });
   });
 
   //----------------------------------------------------------------------------

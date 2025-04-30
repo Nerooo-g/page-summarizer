@@ -41,6 +41,12 @@ export function connectPageSummarizer() {
         if (msg.action == 'SUMMARIZE') {
           const { content, instructions, model, profile } = msg;
           fetchAndStreamSummary(port, content, instructions, model, profile);
+        } else if (msg.action == 'TRANSLATE') {
+          const { text, targetLang, model, profile } = msg;
+          // Construct translation instructions
+          const translateInstructions = `Please translate the following text into ${targetLang}, preserving the meaning and style of the original text:\n\n${text}`;
+          // Use the same streaming mechanism to return the translation
+          fetchAndStreamSummary(port, text, translateInstructions, model, profile);
         }
       });
     }

@@ -1,4 +1,11 @@
 import { wantModel, isReasoningModel } from '../gpt.js';
+// Auto-switch Bootstrap light/dark based on system setting
+(() => {
+  const mq = window.matchMedia('(prefers-color-scheme: dark)');
+  const applyTheme = () => document.documentElement.setAttribute('data-bs-theme', mq.matches ? 'dark' : 'light');
+  applyTheme();
+  mq.addEventListener('change', applyTheme);
+})();
 
 document.addEventListener('DOMContentLoaded', async () => {
   const defaultModel = 'gpt-4o-mini';
