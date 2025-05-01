@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Page Summarizer",
   "version": "3.0",
-  "description": "Summarize web pages using OpenAI API",
+  "description": "Summarize web pages using OpenAI API.",
   "permissions": [
     "activeTab",
     "storage",
