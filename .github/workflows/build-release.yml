@@ -1,6 +1,5 @@
 name: Versioned Build and Release Browser Extension
 
-
 on:
   push:
     branches:

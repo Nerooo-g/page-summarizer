@@ -1,5 +1,7 @@
-# 2.0.9
-- Big Updates.
+# 3.0
+- Major UI redesign with a clean, modern look and improved, vibrant color palette.
+- Automatic dark mode adapts to your system color scheme.
+- Added translation feature: translate summary between English and Chinese instantly.
 
 # 2.0.8
 - Add support for newer reasoning models
