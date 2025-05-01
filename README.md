@@ -1,16 +1,26 @@
-# Page Summarizer (Modified Version)
+# Page Summarizer (Enhanced Edition)
 
 ## Notice
 
-This project is a modified version of [sysread/page-summarizer](https://github.com/sysread/page-summarizer) and continues to follow the original [MIT License](./LICENSE).
+This project is an enhanced version of [sysread/page-summarizer](https://github.com/sysread/page-summarizer) and remains under the original [MIT License](./LICENSE).
 
-### Key Modifications
+### Key Enhancements
 
-Compared to the original project, this version adds:
+Building on the original, this version introduces several significant improvements:
 
-- Modern UI Redesign: Features a fresh, modern interface with vibrant color schemes for improved usability and aesthetics.
-- Automatic Dark Mode: Seamlessly adapts to your system's light/dark mode for a consistent experience.
-- Translate Function: After summarizing, you can instantly translate the summary between English and Chinese with a single click.
+- **Expanded Model Support:**  
+  The original version was limited to fetching only GPT-4o, GPT-4o-mini, o3-mini, and o4-mini models. This update removes those restrictions, enabling access to a wider range of state-of-the-art language models. You can further tailor supported models by modifying `gpt.js` to suit your needs.
+
+- **Modern UI Redesign:**  
+  Enjoy a completely refreshed, modern interface with vibrant color schemes—delivering enhanced usability and a visually appealing user experience.
+
+- **Automatic Dark Mode:**  
+  The interface now dynamically adapts to your system’s light or dark mode settings, ensuring a seamless and consistent appearance.
+
+- **Instant Translation:**  
+  Effortlessly translate your generated summaries between English and Chinese with a single click, right after summarization.
+
+Feel free to further customize or extend these features to best fit your requirements!
 
 ---
 
