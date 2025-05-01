@@ -1,3 +1,6 @@
+# 2.0.9
+- Big Updates.
+
 # 2.0.8
 - Add support for newer reasoning models
 - Fix bugs related to selection of reasoning effort in popup and config
