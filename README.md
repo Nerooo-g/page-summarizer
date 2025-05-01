@@ -6,9 +6,11 @@ This project is a modified version of [sysread/page-summarizer](https://github.c
 
 ### Key Modifications
 
-- Added [describe your changes here]
-- Improved [describe improvements]
-- Fixed [describe bug fixes]
+Compared to the original project, this version adds:
+
+- Modern UI Redesign: Features a fresh, modern interface with vibrant color schemes for improved usability and aesthetics.
+- Automatic Dark Mode: Seamlessly adapts to your system's light/dark mode for a consistent experience.
+- Translate Function: After summarizing, you can instantly translate the summary between English and Chinese with a single click.
 
 ---
 
