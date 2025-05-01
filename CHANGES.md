@@ -1,8 +1,9 @@
-# 3.0
-- Major UI redesign with a clean, modern look and improved, vibrant color palette.
-- Automatic dark mode adapts to your system color scheme.
-- Added translation feature: translate summary between English and Chinese instantly.
-- Resolve bugs that only can fetch limited model in version 2.0.8.
+# 3.0 (Modifications begin from this version)
+
+- Major UI redesign featuring a clean, modern look with an enhanced, vibrant color palette.
+- Automatic dark mode that seamlessly adapts to your system’s color scheme.
+- New translation feature: Instantly translate summaries between English and Chinese.
+- Resolved bugs from version 2.0.8 that limited model selection.
 
 # 2.0.8
 - Add support for newer reasoning models
