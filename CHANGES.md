@@ -2,6 +2,7 @@
 - Major UI redesign with a clean, modern look and improved, vibrant color palette.
 - Automatic dark mode adapts to your system color scheme.
 - Added translation feature: translate summary between English and Chinese instantly.
+- Resolve bugs that only can fetch limited model in version 2.0.8.
 
 # 2.0.8
 - Add support for newer reasoning models
